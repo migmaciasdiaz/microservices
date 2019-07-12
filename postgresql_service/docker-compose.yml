@@ -1,0 +1,12 @@
+version: "3"
+services:
+  fantasydb:
+    # replace username/repo:tag with your name and image details
+    image: postgres_server:latest
+    environment:
+            POSTGRES_USER: "fantasy"
+            POSTGRES_PASSWORD: "orejas"
+    ports:
+      - "50000:5432"
+    volumes:
+            - "/home/miguel/Escritorio/microservices/volumes/postgres_volume:/var/lib/postgresql/data:z"

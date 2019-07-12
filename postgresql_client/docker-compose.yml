@@ -1,0 +1,9 @@
+version: "3"
+services:
+  postgres_client:
+    image: dpage/pgadmin4:latest
+    environment:
+            PGADMIN_DEFAULT_EMAIL: "mig.maciasdiaz@gmail.com"
+            PGADMIN_DEFAULT_PASSWORD: "orejas"
+    ports:
+      - "50001:80"
