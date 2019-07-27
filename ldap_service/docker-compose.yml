@@ -1,0 +1,19 @@
+version: '3'
+services:
+  slapd:
+    image: osixia/openldap
+    environment:
+      LDAP_ORGANISATION: Macias INC
+      LDAP_DOMAIN: macias.com
+      LDAP_ADMIN_PASSWORD: orejas
+    ports:
+      - 389:389
+  phpldapadmin:
+    image: osixia/phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: slapd
+      #PHPLDAPADMIN_HTTPS: 'false'
+    ports:
+      - 8080:443
+    depends_on:
+      - slapd
