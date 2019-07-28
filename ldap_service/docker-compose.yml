@@ -6,6 +6,9 @@ services:
       LDAP_ORGANISATION: Macias INC
       LDAP_DOMAIN: macias.com
       LDAP_ADMIN_PASSWORD: orejas
+    volumes:
+            - /home/miguel/workspace/microservices/volumes/ldap_volume/slapd/database:/var/lib/ldap:z
+            - /home/miguel/workspace/microservices/volumes/ldap_volume/slapd/config:/etc/ldap/slapd.d:z
     ports:
       - 389:389
   phpldapadmin:
